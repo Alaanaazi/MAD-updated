@@ -24,5 +24,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        CardView alertzone =findViewById(R.id.AlertZoneCardView);
+        alertzone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),AlertZone.class);
+                startActivity(intent);
+            }
+        });
     }
 }
