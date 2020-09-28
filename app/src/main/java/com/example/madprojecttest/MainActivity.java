@@ -24,5 +24,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        CardView profile= (CardView) findViewById(R.id.ProfileCardView);
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),Civilian_Profile.class);
+                startActivity(intent);
+            }
+        });
     }
 }
