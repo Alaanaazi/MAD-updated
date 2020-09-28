@@ -22,11 +22,11 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="112dp"
-        android:layout_height="47dp"
+        android:layout_width="125dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="24dp"
         android:background="@drawable/round"
-        android:text="@string/add"
+        android:text="@string/addcontact"
         android:textColor="@color/colorBlack"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
