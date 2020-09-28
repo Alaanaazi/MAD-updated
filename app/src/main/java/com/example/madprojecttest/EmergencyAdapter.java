@@ -12,10 +12,10 @@ import java.util.ArrayList;
 
 public class EmergencyAdapter extends RecyclerView.Adapter<EmergencyAdapter.MyContactHolder>{
 
-    private ArrayList<Contacts> emergencyList;
+    private ArrayList<Hotline> emergencyList;
     private RecyclerViewClickListener listener_contacts;
 
-    public EmergencyAdapter(ArrayList<Contacts> emergencyList, RecyclerViewClickListener listener_contacts){
+    public EmergencyAdapter(ArrayList<Hotline> emergencyList, RecyclerViewClickListener listener_contacts){
         this.emergencyList = emergencyList;
         this.listener_contacts = listener_contacts;
     }
@@ -47,11 +47,11 @@ public class EmergencyAdapter extends RecyclerView.Adapter<EmergencyAdapter.MyCo
 
     @Override
     public void onBindViewHolder(@NonNull EmergencyAdapter.MyContactHolder holder, int position) {
-        String place = emergencyList.get(position).getContact();
+        String place = emergencyList.get(position).getName();
         holder.contact.setText(place);
 
-        String phone = emergencyList.get(position).getNo();
-        holder.no.setText(phone);
+        Integer phone = emergencyList.get(position).getNo();
+        holder.no.setText(String.valueOf(phone));
     }
 
     @Override

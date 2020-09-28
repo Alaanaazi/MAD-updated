@@ -18,9 +18,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar" >
-        <activity android:name=".PoliceRegister" >
-        </activity>
-        <activity android:name=".CivilianRegister" />
+
         <activity android:name=".Emergency" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
