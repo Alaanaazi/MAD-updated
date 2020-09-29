@@ -1,4 +1,41 @@
 <resources>
     <string name="app_name">MAD Project Test</string>
     <string name="title_activity_alert_zone">Map</string>
+
+    <string name="title_activity_maps">Alert Zone</string>
+    <string name="msg1">A lady had lost her ATM card near the bus stop, so if anyone find it please inform.</string>
+    <string name="msg">The Police station is searching for the criminal.</string>
+    <string name="incident2">Lost Case</string>
+
+
+    <string name="send_alert"> Send Alert </string>
+    <string name="savechanges"> Save Changes </string>
+    <string name="delete"> Delete </string>
+    <string name="incident1">Searching Criminal</string>
+    <string name="add">Add</string>
+    <string name="addcontact"> Add Hotline </string>
+    <string name="edit">Edit</string>
+
+    <string name="addemergency"> Hotline </string>
+    <string name="emergencyname"> Hotline Name </string>
+    <string name="emergencyphone"> Hotline Number </string>
+
+    <string name="Civilian">Welcome Civilian</string>
+    <string name="name">Full name</string>
+    <string name="nic">NIC</string>
+    <string name="email">Email</string>
+    <string name="phone">Contact no</string>
+    <string name="Email">Username</string>
+    <string name="Pass">Password</string>
+    <string name="signUp">Don\'t have an account?</string>
+    <string name="Login">Login</string>
+    <string name="register">Register</string>
+    <string name="civilian">Civilian Registration</string>
+    <string name="emailAdd">Email address</string>
+    <string name="contact">Contact number</string>
+    <string name="confirmPass">Confirm password</string>
+    <string name="stationId">Station ID</string>
+    <string name="sLocation">Station location</string>
+    <string name="policeReg">Police Station Registration</string>
+
 </resources>

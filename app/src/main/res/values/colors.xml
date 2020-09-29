@@ -10,5 +10,14 @@
     <color name="color2">#7e455e</color>
     <color name="color3">#796e25</color>
     <color name="color4">#59717c</color>
+    <color name="save">#009933</color>
+    <color name="edit">#0052cc</color>
+    <color name="delete">#e60000</color>
+
+    <color name="colorWhiteTrans">#AEFFFFFF</color>
+    <color name="colorGrey">#C6736E6E</color>
+    <color name="colorInput">#FFFFFF</color>
+    <color name="textColor">#FFFFFF</color>
+    <color name="buttonLoginColor">#1C789C</color>
 
 </resources>
