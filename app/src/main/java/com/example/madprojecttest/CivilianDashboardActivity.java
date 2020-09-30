@@ -7,9 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import static android.view.View.Z;
-
-public class MainActivity extends AppCompatActivity {
+public class CivilianDashboardActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         news.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getApplicationContext(),AppBar.class);
+                Intent intent=new Intent(getApplicationContext(), View_Alerts.class);
                 startActivity(intent);
             }
         });
@@ -42,5 +40,24 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        CardView wantedlist=findViewById(R.id.WantedlistCardView);
+        wantedlist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),Criminal_View.class);
+                startActivity(intent);
+            }
+        });
+
+        CardView emergency=findViewById(R.id.EmeregencyCardView);
+        emergency.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),Emergency.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }

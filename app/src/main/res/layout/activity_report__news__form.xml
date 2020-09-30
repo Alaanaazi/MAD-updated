@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/backgroundnews"
-    tools:context=".Report_News_Form">
+    tools:context=".AddAlert">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -22,7 +22,7 @@
             android:layout_height="match_parent">
 
             <EditText
-                android:id="@+id/editTextTextPersonName3"
+                android:id="@+id/title"
                 android:layout_width="220dp"
                 android:layout_height="55dp"
                 android:layout_marginStart="2dp"
@@ -36,7 +36,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/editTextTextMultiLine"
+                android:id="@+id/alertdescription"
                 android:layout_width="220dp"
                 android:layout_height="53dp"
                 android:layout_marginStart="1dp"
@@ -48,15 +48,15 @@
                 android:inputType="textMultiLine"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView10"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+                app:layout_constraintTop_toBottomOf="@+id/title" />
 
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/sendalert"
                 android:layout_width="284dp"
                 android:layout_height="47dp"
                 android:layout_marginBottom="56dp"
                 android:background="@color/buttonLoginColor"
-                android:text="Submit"
+                android:text="SEND ALERT"
                 android:textColor="#FFFFFF"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -71,7 +71,7 @@
                 android:layout_marginTop="41dp"
                 android:layout_marginEnd="1dp"
                 android:scaleType="center"
-                app:layout_constraintEnd_toStartOf="@+id/editTextTextMultiLine"
+                app:layout_constraintEnd_toStartOf="@+id/alertdescription"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView11"
                 app:srcCompat="@drawable/description" />
@@ -84,7 +84,7 @@
                 android:layout_marginTop="53dp"
                 android:layout_marginEnd="1dp"
                 android:scaleType="center"
-                app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName3"
+                app:layout_constraintEnd_toStartOf="@+id/title"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/title" />
@@ -97,7 +97,7 @@
         android:layout_height="71dp"
         android:layout_marginTop="41dp"
         android:gravity="center"
-        android:text="Report News"
+        android:text="Report Alert"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"

@@ -22,7 +22,7 @@ public class AddEmergency extends AppCompatActivity {
     Button btnsave;
     Hotline hotline;
     DatabaseReference dbRef;
-    long id=0;
+   // long id=0;
 
 
     @Override
@@ -36,34 +36,40 @@ public class AddEmergency extends AppCompatActivity {
 
         hotline=new Hotline();
 
-        dbRef= FirebaseDatabase.getInstance().getReference().child("Hotline");
-        dbRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.exists()){
-                    id=snapshot.getChildrenCount();
-                }
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
 
         btnsave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-               hotline.setName(txtname.getText().toString().trim());
-               hotline.setNo(Integer.parseInt(txtno.getText().toString().trim()));
+                dbRef= FirebaseDatabase.getInstance().getReference().child("Hotline");
 
-               //dbRef.push().setValue(hotline);
-               dbRef.child(hotline.getName()).setValue(hotline);
+                hotline.setName(txtname.getText().toString().trim());
+                hotline.setNo(Integer.parseInt(txtno.getText().toString().trim()));
 
-               Toast.makeText(getApplicationContext(), "Successfully added", Toast.LENGTH_SHORT).show();
-               Intent intent=new Intent(getApplicationContext(),Emergency.class);
-               startActivity(intent);
+                dbRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if(snapshot.hasChild(hotline.getName())){
+                            Toast.makeText(getApplicationContext(), "Hotline Already Exists", Toast.LENGTH_SHORT).show();
+                        }else{
+
+                            dbRef.child(hotline.getName()).setValue(hotline);
+
+                            Toast.makeText(getApplicationContext(), "Successfully added", Toast.LENGTH_SHORT).show();
+                            Intent intent=new Intent(getApplicationContext(),Emergency.class);
+                            startActivity(intent);
+
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+
 
 
 

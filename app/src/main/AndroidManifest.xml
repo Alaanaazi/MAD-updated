@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.madprojecttest">
+
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
          location permissions for the "MyLocation" functionality.
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
 
     <application
         android:allowBackup="true"
@@ -16,10 +18,24 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".CriminalRegister"></activity>
-        <activity android:name=".Login" />
-        <activity android:name=".PoliceRegister">
+        android:theme="@style/AppTheme.NoActionBar" >
+        <activity android:name=".CriminalRegister">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity android:name=".Login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".PoliceRegister" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,22 +49,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Emergency">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".AddAlert"/>
+        <activity android:name=".Emergency"/>
         <activity android:name=".EmergencyEditPage" />
-        <activity android:name=".AddEmergency">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".View_News">
+        <activity android:name=".AddEmergency"/>
+        <activity android:name=".View_Alerts" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -56,13 +61,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".NewsEditPage" />
-        <activity android:name=".Criminal_View">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".Criminal_View" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -81,7 +81,7 @@
         <activity android:name=".PoliceProfile" />
         <activity android:name=".DeleteCriminal" />
         <activity android:name=".AppBar" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".CivilianDashboardActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

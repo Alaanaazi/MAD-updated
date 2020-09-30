@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View_News">
+    tools:context=".View_Alerts">
 
     <include android:id="@+id/toolBar" layout="@layout/tool_bar"></include>
 
@@ -21,7 +21,7 @@
         tools:layout_editor_absoluteX="-24dp" />
 
     <Button
-        android:id="@+id/addhotline"
+        android:id="@+id/addalert"
         android:layout_width="112dp"
         android:layout_height="47dp"
         android:layout_marginTop="16dp"

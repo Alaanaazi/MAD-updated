@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".civilianRegister"
+    tools:context=".CivilianRegister"
     android:background="@drawable/b1">
 
     <TextView
@@ -92,7 +92,7 @@
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="match_parent"
-                android:src="@drawable/mail"></ImageView>
+                android:src="@drawable/mail" />
 
 
             <EditText

@@ -8,8 +8,6 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 public class AppBar extends AppCompatActivity {
 
     @Override
@@ -18,13 +16,13 @@ public class AppBar extends AppCompatActivity {
         setContentView(R.layout.activity_app_bar);
 
         TextView Title=(TextView) findViewById(R.id.ToolbarTitle);
-        Title.setText("News");
+        Title.setText("Alert");
 
         ImageButton menu = (ImageButton) findViewById(R.id.menu);
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1 = new Intent(getApplicationContext(),MainActivity.class);
+                Intent intent1 = new Intent(getApplicationContext(), CivilianDashboardActivity.class);
                 startActivity(intent1);
             }
         });

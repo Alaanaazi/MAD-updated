@@ -12,11 +12,11 @@ import java.util.ArrayList;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyViewHolder> {
 
-    private ArrayList<News> newsList;
+    private ArrayList<Alert> alertList;
     private RecyclerViewClickListener listener;
 
-    public RecyclerAdapter(ArrayList<News> newsList, RecyclerViewClickListener listener){
-        this.newsList = newsList;
+    public RecyclerAdapter(ArrayList<Alert> alertList, RecyclerViewClickListener listener){
+        this.alertList = alertList;
         this.listener = listener;
     }
 
@@ -48,16 +48,16 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
     @Override
     public void onBindViewHolder(@NonNull RecyclerAdapter.MyViewHolder holder, int position) {
 
-        String head = newsList.get(position).getTitle();
+        String head = alertList.get(position).getTitle();
         holder.title.setText(head);
 
-        String body = newsList.get(position).getDescription();
+        String body = alertList.get(position).getDescription();
         holder.description.setText(body);
     }
 
     @Override
     public int getItemCount() {
-        return newsList.size();
+        return alertList.size();
     }
 
     public interface RecyclerViewClickListener{

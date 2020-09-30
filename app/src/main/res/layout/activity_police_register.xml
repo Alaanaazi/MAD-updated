@@ -48,7 +48,7 @@
 
 
             <EditText
-                android:id="@+id/inputStationID"
+                android:id="@+id/criminalid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#00000000"
@@ -71,7 +71,7 @@
 
 
             <EditText
-                android:id="@+id/inputStationAddress"
+                android:id="@+id/criminalage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#00000000"
@@ -95,7 +95,7 @@
 
 
             <EditText
-                android:id="@+id/inputPolicePhone"
+                android:id="@+id/criminalheight"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#00000000"
@@ -120,7 +120,7 @@
 
 
             <EditText
-                android:id="@+id/inputPolicepwd"
+                android:id="@+id/suspectedarea"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#00000000"
@@ -144,7 +144,7 @@
 
 
             <EditText
-                android:id="@+id/inputPoliceConfirmpwd"
+                android:id="@+id/crime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#00000000"
@@ -156,7 +156,7 @@
 
 
         <Button
-            android:id="@+id/registerpolice"
+            android:id="@+id/registercriminal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
