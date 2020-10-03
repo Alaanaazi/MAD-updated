@@ -27,13 +27,13 @@ public class PoliceRegister extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_police_register);
 
-         txtid=findViewById(R.id.criminalid);
-         txtaddress=findViewById(R.id.criminalage);
-         txtphone=findViewById(R.id.criminalheight);
-         txtpwd=findViewById(R.id.suspectedarea);
-         txtconpwd=findViewById(R.id.crime);
+         txtid=findViewById(R.id.stationid);
+         txtaddress=findViewById(R.id.address);
+         txtphone=findViewById(R.id.stationphone);
+         txtpwd=findViewById(R.id.spwd);
+         txtconpwd=findViewById(R.id.sconpwd);
 
-         btnregister=findViewById(R.id.registercriminal);
+         btnregister=findViewById(R.id.registerstation);
 
          policeStation=new PoliceStation();
 

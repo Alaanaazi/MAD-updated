@@ -28,7 +28,7 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".Login">
+        <activity android:name=".CivilianLogin">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

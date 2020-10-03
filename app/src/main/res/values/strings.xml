@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MAD Project Test</string>
+    <string name="app_name">UrSafe</string>
     <string name="title_activity_alert_zone">Map</string>
     <string name="title_activity_maps">Alert Zone</string>
     <string name="msg1">A lady had lost her ATM card near the bus stop, so if anyone find it please inform.</string>

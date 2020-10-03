@@ -33,11 +33,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView14">
 
-        <ImageView
-            android:id="@+id/criminalpic"
-            android:layout_width="289dp"
-            android:layout_height="115dp"
-            tools:srcCompat="@tools:sample/avatars" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/criminalpic"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:src="@drawable/pro5"></ImageView>
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -58,7 +67,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#00000000"
-                android:hint="Criminal ID"
+                android:hint="Criminal Name"
                 android:textColor="@android:color/black"
                 android:textColorHint="@android:color/black"></EditText>
         </LinearLayout>
@@ -73,7 +82,7 @@
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="match_parent"
-                android:src="@drawable/age"></ImageView>
+                android:src="@drawable/crim_age"></ImageView>
 
 
             <EditText
@@ -98,7 +107,7 @@
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="match_parent"
-                android:src="@drawable/height"></ImageView>
+                android:src="@drawable/crim_height"></ImageView>
 
 
             <EditText
@@ -160,6 +169,8 @@
                 android:textColorHint="@android:color/black"></EditText>
 
         </LinearLayout>
+
+
 
 
         <Button

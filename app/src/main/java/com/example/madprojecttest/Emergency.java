@@ -29,6 +29,8 @@ public class Emergency extends AppCompatActivity {
     private EmergencyAdapter.RecyclerViewClickListener listener_contacts;
     Hotline hotline;
     DatabaseReference readref;
+    String user;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +61,7 @@ public class Emergency extends AppCompatActivity {
                         hotline.setName(contact.child("name").getValue().toString());
                         hotline.setNo(Integer.parseInt(contact.child("no").getValue().toString()));
                         emergencyList.add(hotline);
+
                         setOnClickListner();
                     } else {
                         Toast.makeText(getApplicationContext(), "Nothing to display", Toast.LENGTH_SHORT).show();

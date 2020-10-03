@@ -33,6 +33,7 @@ public class Criminal_View extends AppCompatActivity {
         criminals=new ArrayList<>();
 
         readRef= FirebaseDatabase.getInstance().getReference().child("Criminal");
+       // Toast.makeText(getApplicationContext(),readRef.toString(),Toast.LENGTH_SHORT);
         readRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -41,7 +42,10 @@ public class Criminal_View extends AppCompatActivity {
                     if(wanted.hasChildren()){
 
                         criminal=new Criminal();
+                        criminal.setName(wanted.child("name").getValue().toString());
                         criminal.setCrime(wanted.child("crime").getValue().toString());
+                        criminal.setHeight(Integer.parseInt(wanted.child("height").getValue().toString()));
+                        criminal.setAge(Integer.parseInt(wanted.child("age").getValue().toString()));
                         criminal.setArea(wanted.child("area").getValue().toString());
                         criminal.setPic(wanted.child("pic").getValue().toString());
                         criminals.add(criminal);

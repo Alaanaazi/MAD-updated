@@ -104,7 +104,7 @@ public class AddAlert extends AppCompatActivity {
                             int latestLocationIndex=locationResult.getLocations().size()-1;
                             lat=locationResult.getLocations().get(latestLocationIndex).getLatitude();
                             lng=locationResult.getLocations().get(latestLocationIndex).getLongitude();
-                            Toast.makeText(getApplicationContext(), String.valueOf(lat), Toast.LENGTH_SHORT).show();
+                           // Toast.makeText(getApplicationContext(), String.valueOf(lat), Toast.LENGTH_SHORT).show();
                             dbRef= FirebaseDatabase.getInstance().getReference().child("Alert");
                             alert.setTitle(txttitle.getText().toString().trim());
                             alert.setDescription(txtdesc.getText().toString().trim());

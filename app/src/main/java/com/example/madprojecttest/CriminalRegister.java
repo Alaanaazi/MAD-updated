@@ -73,14 +73,14 @@ public class CriminalRegister extends AppCompatActivity {
 
               dbref=FirebaseDatabase.getInstance().getReference().child("Criminal");
 
-              criminal.setId(txtid.getText().toString().trim());
+              criminal.setName(txtid.getText().toString().trim());
               criminal.setAge(Integer.parseInt(txtage.getText().toString().trim()));
               criminal.setHeight(Integer.parseInt(txtheight.getText().toString().trim()));
               criminal.setArea(txtarea.getText().toString().trim());
               criminal.setCrime(txtcrime.getText().toString().trim());
               criminal.setPic(path);
 
-              dbref.child(criminal.getId()).setValue(criminal);
+              dbref.child(criminal.getName()).setValue(criminal);
               Toast.makeText(getApplicationContext(),"Successfully added",Toast.LENGTH_SHORT).show();
 
             }
