@@ -21,7 +21,7 @@
     </androidx.viewpager.widget.ViewPager>
 
     <Button
-        android:id="@+id/btnOrder1"
+        android:id="@+id/addnewcriminal"
         android:text="Add Criminal"
         android:textColor="#fff"
         android:background="@drawable/round"

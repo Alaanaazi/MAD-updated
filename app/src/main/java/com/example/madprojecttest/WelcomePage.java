@@ -15,12 +15,17 @@ public class WelcomePage extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         SessionManagement sessionManagement=new SessionManagement(WelcomePage.this);
-        if(!sessionManagement.getSession().equals("No user")){
+        if(!sessionManagement.getSession().equals("No user")&&sessionManagement.getPoliceSession().equals("No user")){
             Toast.makeText(getApplicationContext(),sessionManagement.getSession(),Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(getApplicationContext(), CivilianDashboardActivity.class);
             startActivity(intent);
-        }
 
+        }else if(!sessionManagement.getPoliceSession().equals("No user")&&sessionManagement.getSession().equals("No user")) {
+
+            Toast.makeText(getApplicationContext(), sessionManagement.getSession(), Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(getApplicationContext(),PoliceDashboard.class);
+            startActivity(intent);
+        }
     }
 
     @Override

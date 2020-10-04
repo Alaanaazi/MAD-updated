@@ -69,7 +69,7 @@ public class PoliceDashboard extends AppCompatActivity {
                 sessionManagement.removeSession();
                 //Toast.makeText(getApplicationContext(),sessionManagement.getSession(),Toast.LENGTH_SHORT).show();
                 onDestroy();
-                Intent intent=new Intent(getApplicationContext(),PoliceLogin.class);
+                Intent intent=new Intent(getApplicationContext(),WelcomePage.class);
                 startActivity(intent);
             }
         });
