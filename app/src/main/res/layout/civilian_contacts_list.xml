@@ -14,7 +14,7 @@
         android:layout_marginTop="35dp"
         android:layout_marginEnd="20dp"
         app:cardBackgroundColor="@color/emergencycard"
-        app:cardCornerRadius="10dp"
+        app:cardCornerRadius="20dp"
         app:cardElevation="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,13 +28,13 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginEnd="4dp"
+                android:layout_marginEnd="8dp"
                 android:layout_marginBottom="5dp"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
-                app:cardCornerRadius="10dp"
+                app:cardCornerRadius="20dp"
                 app:cardPreventCornerOverlap="false"
                 app:cardUseCompatPadding="false"
                 app:contentPadding="5dp"
@@ -52,7 +52,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/textView12"
+                        android:id="@+id/textView132"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="250dp"
@@ -66,7 +66,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/textView11"
+                        android:id="@+id/textView131"
                         android:layout_width="250dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"

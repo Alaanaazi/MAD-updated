@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,7 +19,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class EmergencyEditPage extends AppCompatActivity {
-
+    ImageButton menu;
+    TextView title;
     EditText txtno;
     Button btnUpdate,btnDelete;
     Hotline hotline;
@@ -30,6 +32,18 @@ public class EmergencyEditPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.emergency_edit);
+
+        title = findViewById(R.id.ToolbarTitle);
+        title.setText("Hotline Numbers");
+
+        menu = findViewById(R.id.menu);
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),Emergency.class);
+                startActivity(intent);
+            }
+        });
 
         final TextView contact = findViewById(R.id.textView30);
         txtno = findViewById(R.id.editText2);

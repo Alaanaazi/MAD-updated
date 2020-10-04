@@ -48,4 +48,15 @@ public class Civilian {
     public void setPwd(String pwd) {
         this.pwd = pwd;
     }
+
+    public boolean isNICValid(String NIC) {
+        if((NIC.length()==10 && NIC.charAt(9)=='V') || (NIC.length()==12)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+
 }

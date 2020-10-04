@@ -19,13 +19,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class Criminal_View extends AppCompatActivity {
+public class Police_Criminal_View extends AppCompatActivity {
     ImageButton menu;
     TextView title;
     ViewPager viewPager;
-    Adapter adapter;
+    Adapter2 adapter2;
     ArrayList<Criminal> criminals ;
     Integer [] colors=null;
     ArgbEvaluator argbEvaluator = new ArgbEvaluator();
@@ -35,8 +34,7 @@ public class Criminal_View extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_criminal__view);
-        criminals=new ArrayList<>();
+        setContentView(R.layout.police__criminal__view);
 
         title = findViewById(R.id.ToolbarTitle);
         title.setText("Wanted List");
@@ -45,13 +43,14 @@ public class Criminal_View extends AppCompatActivity {
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),CivilianDashboardActivity.class);
+                Intent intent = new Intent(getApplicationContext(),PoliceDashboard.class);
                 startActivity(intent);
             }
         });
 
+        criminals=new ArrayList<>();
+
         readRef= FirebaseDatabase.getInstance().getReference().child("Criminal");
-       // Toast.makeText(getApplicationContext(),readRef.toString(),Toast.LENGTH_SHORT);
         readRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -60,10 +59,7 @@ public class Criminal_View extends AppCompatActivity {
                     if(wanted.hasChildren()){
 
                         criminal=new Criminal();
-                        criminal.setName(wanted.child("name").getValue().toString());
                         criminal.setCrime(wanted.child("crime").getValue().toString());
-                        criminal.setHeight(Integer.parseInt(wanted.child("height").getValue().toString()));
-                        criminal.setAge(Integer.parseInt(wanted.child("age").getValue().toString()));
                         criminal.setArea(wanted.child("area").getValue().toString());
                         criminal.setPic(wanted.child("pic").getValue().toString());
                         criminals.add(criminal);
@@ -71,9 +67,9 @@ public class Criminal_View extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Nothing to display", Toast.LENGTH_SHORT).show();
                     }
                 }
-                adapter = new Adapter(criminals,getApplicationContext());
-                viewPager = findViewById(R.id.viewPagers);
-                viewPager.setAdapter(adapter);
+                adapter2 = new Adapter2(criminals,getApplicationContext());
+                viewPager = findViewById(R.id.viewPagers2);
+                viewPager.setAdapter(adapter2);
                 viewPager.setPadding(130,0,130,0);
 
                 Integer[] colors_temp= {
@@ -88,7 +84,7 @@ public class Criminal_View extends AppCompatActivity {
                 viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
                     @Override
                     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                        if(position < (adapter.getCount() -1) && position< (colors.length-1)) {
+                        if(position < (adapter2.getCount() -1) && position< (colors.length-1)) {
                             viewPager.setBackgroundColor(
                                     (Integer) argbEvaluator.evaluate(
                                             positionOffset,
@@ -119,10 +115,6 @@ public class Criminal_View extends AppCompatActivity {
 
             }
         });
-
-
-
-
 
     }
 }

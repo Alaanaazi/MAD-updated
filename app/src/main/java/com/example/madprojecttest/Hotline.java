@@ -21,4 +21,14 @@ public class Hotline {
     public void setNo(Integer no) {
         this.no = no;
     }
+
+    public boolean isNovalid(Integer no){
+        String value = ""+no;
+
+        if(value.length()==9) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

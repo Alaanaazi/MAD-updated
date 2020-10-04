@@ -10,6 +10,7 @@
     <string name="send_alert"> Send Alert </string>
     <string name="savechanges"> Save Changes </string>
     <string name="delete"> Delete </string>
+    <string name="solve"> Solved </string>
     <string name="incident1">Searching Criminal</string>
     <string name="add">Add</string>
     <string name="addcontact"> Add Hotline </string>

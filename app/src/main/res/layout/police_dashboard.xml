@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back3"
-    tools:context=".CivilianDashboardActivity">
+    android:background="@drawable/dashboard"
+    tools:context=".PoliceDashboard">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textViewtitle"
             android:layout_width="243dp"
             android:layout_height="77dp"
             android:layout_marginStart="50dp"
@@ -20,7 +20,7 @@
             android:layout_marginBottom="49dp"
             android:fontFamily="@font/aldrich"
             android:gravity="center"
-            android:text="Welcome User"
+            android:text="Welcome Police Station"
             android:textColor="@color/colorTitle"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -40,10 +40,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView">
+            app:layout_constraintTop_toBottomOf="@+id/textViewtitle">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/NewsCardView"
+                android:id="@+id/NewsCardViewPolice"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
@@ -78,7 +78,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/AlertZoneCardView"
+                android:id="@+id/AlertZoneCardViewPolice"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
@@ -126,7 +126,7 @@
             app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/WantedlistCardView"
+                android:id="@+id/WantedlistCardViewPolice"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
@@ -161,7 +161,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/EmeregencyCardView"
+                android:id="@+id/EmeregencyCardViewPolice"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
@@ -208,7 +208,7 @@
             app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/CivilProfileCardView"
+                android:id="@+id/CivilProfileCardViewPolice"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
@@ -243,7 +243,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/logoutcardview"
+                android:id="@+id/logoutcardviewPolice"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"

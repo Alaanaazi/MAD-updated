@@ -67,4 +67,13 @@ public class Criminal {
     public void setPic(String pic) {
         this.pic = pic;
     }
+
+    public boolean ArealengthisValid(String area) {
+        if (area.length()<=20){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }

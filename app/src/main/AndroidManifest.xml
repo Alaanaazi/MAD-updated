@@ -32,6 +32,8 @@
         <activity android:name=".Criminal_View" />
         <activity android:name=".Civilian_Profile" />
         <activity android:name=".CivilianDashboardActivity"/>
+        <activity android:name=".PoliceDashboard"/>
+
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.

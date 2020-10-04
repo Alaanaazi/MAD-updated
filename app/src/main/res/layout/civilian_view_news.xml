@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background1"
-    tools:context=".Emergency">
+    tools:context=".Civilian_News">
 
     <include
         android:id="@+id/toolBar"
@@ -14,30 +14,31 @@
         app:layout_constraintStart_toStartOf="parent"></include>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView2"
+        android:id="@+id/recyclerView3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="55dp"
-        android:layout_marginBottom="82dp"
+        android:layout_marginBottom="72dp"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="-16dp" />
+        tools:layout_editor_absoluteX="-24dp" />
 
     <Button
-        android:id="@+id/addhotline"
-        android:layout_width="125dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="24dp"
+        android:id="@+id/civilian_alertbtn"
+        android:layout_width="112dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="28dp"
         android:background="@color/save1"
-        android:text="@string/addcontact"
-        android:textAlignment="center"
+        android:text="@string/send_alert"
         android:textColor="@color/colorInput"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView2" />
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView1" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -38,4 +38,13 @@ public class PoliceStation {
     public void setPwd(String pwd) {
         this.pwd = pwd;
     }
+
+    public boolean isIdValid(String id) {
+        if ((id.charAt(0)=='L')&&(id.charAt(1)=='K')&&(id.charAt(2)=='P')){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }

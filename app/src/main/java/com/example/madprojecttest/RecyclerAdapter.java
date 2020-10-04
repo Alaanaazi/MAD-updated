@@ -23,11 +23,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private TextView title;
         private TextView description;
+        private TextView datetime;
 
         public MyViewHolder(final View view){
             super(view);
             title = view.findViewById(R.id.textView7);
             description = view.findViewById(R.id.textView8);
+            datetime = view.findViewById(R.id.news_date);
             view.setOnClickListener(this);
         }
 
@@ -53,6 +55,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
 
         String body = alertList.get(position).getDescription();
         holder.description.setText(body);
+
+        String day = alertList.get(position).getDate();
+        holder.datetime.setText(day);
     }
 
     @Override
@@ -63,4 +68,5 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
     public interface RecyclerViewClickListener{
         void onClick(View v, int position);
     }
+
 }

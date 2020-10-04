@@ -56,4 +56,13 @@ public class Alert {
     public void setLongtitude(double longtitude) {
         this.longtitude = longtitude;
     }
+
+    public boolean TitleLengthvalid(String title_name) {
+        if (title_name.length()<=25){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }

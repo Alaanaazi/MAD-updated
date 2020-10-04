@@ -3,10 +3,12 @@ package com.example.madprojecttest;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -16,7 +18,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class Civilian_Profile extends AppCompatActivity {
-
+    ImageButton menu;
+    TextView title;
     EditText name,mail,phone,pwd;
     TextView nic;
     Button dltbtn,respwd;
@@ -28,6 +31,18 @@ public class Civilian_Profile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_civilian__profile);
+
+        title = findViewById(R.id.ToolbarTitle);
+        title.setText("Civilian Profile");
+
+        menu = findViewById(R.id.menu);
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),CivilianDashboardActivity.class);
+                startActivity(intent);
+            }
+        });
 
         final SessionManagement sessionManagement=new SessionManagement(Civilian_Profile.this);
         String un=sessionManagement.getSession();

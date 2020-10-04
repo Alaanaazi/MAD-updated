@@ -3,41 +3,37 @@ package com.example.madprojecttest;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
-public class CivilianDashboardActivity extends AppCompatActivity {
-
+public class PoliceDashboard extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.police_dashboard);
 
-        CardView news= (CardView) findViewById(R.id.NewsCardView);
+        CardView news= (CardView) findViewById(R.id.NewsCardViewPolice);
         news.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getApplicationContext(), Civilian_News.class);
+                Intent intent=new Intent(getApplicationContext(), View_Alerts.class);
                 startActivity(intent);
             }
         });
 
 
-        CardView profile= (CardView) findViewById(R.id.CivilProfileCardView);
+        CardView profile= (CardView) findViewById(R.id.CivilProfileCardViewPolice);
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getApplicationContext(),Civilian_Profile.class);
+                Intent intent=new Intent(getApplicationContext(),PoliceProfile.class);
                 startActivity(intent);
             }
         });
 
-        CardView alertzone =findViewById(R.id.AlertZoneCardView);
+        CardView alertzone =findViewById(R.id.AlertZoneCardViewPolice);
         alertzone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,35 +42,35 @@ public class CivilianDashboardActivity extends AppCompatActivity {
             }
         });
 
-        CardView wantedlist=findViewById(R.id.WantedlistCardView);
+        CardView wantedlist=findViewById(R.id.WantedlistCardViewPolice);
         wantedlist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getApplicationContext(),Criminal_View.class);
+                Intent intent=new Intent(getApplicationContext(),Police_Criminal_View.class);
                 startActivity(intent);
             }
         });
 
-        CardView emergency=findViewById(R.id.EmeregencyCardView);
+        CardView emergency=findViewById(R.id.EmeregencyCardViewPolice);
         emergency.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getApplicationContext(),Civilian_Emergency.class);
+                Intent intent=new Intent(getApplicationContext(),Emergency.class);
                 startActivity(intent);
             }
         });
 
-        CardView logout =findViewById(R.id.logoutcardview);
+        CardView logout =findViewById(R.id.logoutcardviewPolice);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-             SessionManagement sessionManagement=new SessionManagement(CivilianDashboardActivity.this);
-             //Toast.makeText(getApplicationContext(),sessionManagement.getSession(),Toast.LENGTH_SHORT).show();
-             sessionManagement.removeSession();
-             //Toast.makeText(getApplicationContext(),sessionManagement.getSession(),Toast.LENGTH_SHORT).show();
-            //  onDestroy();
-             Intent intent=new Intent(getApplicationContext(),WelcomePage.class);
-             startActivity(intent);
+                SessionManagement sessionManagement=new SessionManagement(PoliceDashboard.this);
+                //Toast.makeText(getApplicationContext(),sessionManagement.getSession(),Toast.LENGTH_SHORT).show();
+                sessionManagement.removeSession();
+                //Toast.makeText(getApplicationContext(),sessionManagement.getSession(),Toast.LENGTH_SHORT).show();
+                onDestroy();
+                Intent intent=new Intent(getApplicationContext(),PoliceLogin.class);
+                startActivity(intent);
             }
         });
 
