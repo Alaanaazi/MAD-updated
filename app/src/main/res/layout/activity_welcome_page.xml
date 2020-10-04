@@ -7,17 +7,18 @@
     android:background="@drawable/b1"
     tools:context=".WelcomePage">
 
+
     <Button
         android:id="@+id/policeBtn"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginTop="240dp"
+        android:layout_marginTop="244dp"
         android:background="@drawable/logopolice"
 
         android:backgroundTintMode="src_in"
 
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.103"
+        app:layout_constraintHorizontal_bias="0.13"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
