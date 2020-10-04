@@ -21,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Criminal_View extends AppCompatActivity {
+public class Criminal_List extends AppCompatActivity {
     ImageButton menu;
     TextView title;
     ViewPager viewPager;

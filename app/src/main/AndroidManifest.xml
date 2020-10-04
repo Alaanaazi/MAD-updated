@@ -29,10 +29,12 @@
         <activity android:name=".AddEmergency"/>
         <activity android:name=".View_Alerts"/>
         <activity android:name=".NewsEditPage" />
-        <activity android:name=".Criminal_View" />
+        <activity android:name=".Criminal_List" />
         <activity android:name=".Civilian_Profile" />
         <activity android:name=".CivilianDashboardActivity"/>
         <activity android:name=".PoliceDashboard"/>
+        <activity android:name=".Police_Criminal_View"/>
+        <activity android:name=".ViewCriminal"/>
 
 
         <!--
@@ -51,7 +53,6 @@
             android:name=".AlertZone"
             android:label="@string/title_activity_alert_zone" />
         <activity android:name=".PoliceProfile" />
-        <activity android:name=".DeleteCriminal" />
         <activity android:name=".AppBar" />
         <activity android:name=".Splash">
             <intent-filter>

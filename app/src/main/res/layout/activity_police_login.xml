@@ -113,6 +113,7 @@
             </TextView>
 
             <Button
+                android:id="@+id/policesignup"
                 android:layout_width="80dp"
                 android:layout_height="40dp"
                 android:background="@android:color/holo_green_light"

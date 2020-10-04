@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="10dp"
-    tools:context=".Criminal_View">
+    tools:context=".Criminal_List">
 
     <include android:id="@+id/toolBar" layout="@layout/tool_bar"></include>
 
@@ -19,19 +19,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </androidx.viewpager.widget.ViewPager>
-
-    <Button
-        android:id="@+id/btnOrder"
-        android:text="Add Criminal"
-        android:textColor="#fff"
-        android:background="@drawable/round"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="60dp"
-        android:layout_centerHorizontal="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
 
 
 </RelativeLayout>
