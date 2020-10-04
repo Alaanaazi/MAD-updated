@@ -21,6 +21,9 @@ import com.google.android.gms.location.LocationServices;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 public class AddAlert extends AppCompatActivity {
 
     private static final int REQUEST_CODE_LOCATION_PERMISSION = 1;
@@ -30,6 +33,8 @@ public class AddAlert extends AppCompatActivity {
     Alert alert;
     DatabaseReference dbRef;
     double lat,lng;
+    String datetime;
+    String user;
 
 
     @Override
@@ -37,8 +42,16 @@ public class AddAlert extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report__news__form);
 
+        SessionManagement sessionManagement=new SessionManagement(AddAlert.this);
+        user=sessionManagement.getSession();
+
         txttitle = findViewById(R.id.title);
         txtdesc = findViewById(R.id.alertdescription);
+
+        Calendar calendar=Calendar.getInstance();
+        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("dd-MMM-YYYY hh:mm a");
+        datetime=simpleDateFormat.format(calendar.getTime());
+
 
         alert = new Alert();
 
@@ -108,8 +121,10 @@ public class AddAlert extends AppCompatActivity {
                             dbRef= FirebaseDatabase.getInstance().getReference().child("Alert");
                             alert.setTitle(txttitle.getText().toString().trim());
                             alert.setDescription(txtdesc.getText().toString().trim());
+                            alert.setDate(datetime);
                             alert.setLattitude(lat);
                             alert.setLongtitude(lng);
+                            alert.setNic(user);
 
                             dbRef.child(alert.getTitle()).setValue(alert);
                             Toast.makeText(getApplicationContext(), "Successfully sent", Toast.LENGTH_SHORT).show();

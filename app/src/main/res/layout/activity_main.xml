@@ -158,7 +158,7 @@
                         app:srcCompat="@drawable/wanted_list" />
 
                     <TextView
-                        android:id="@+id/textView3"
+                        android:id="@+id/getcivilphone"
                         android:layout_width="149dp"
                         android:layout_height="37dp"
                         android:layout_below="@id/imageView3"
@@ -220,7 +220,7 @@
             app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/ProfileCardView"
+                android:id="@+id/CivilProfileCardView"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"

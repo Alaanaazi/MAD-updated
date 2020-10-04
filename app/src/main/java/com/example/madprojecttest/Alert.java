@@ -6,6 +6,24 @@ public class Alert {
     private String description_name;
     private double lattitude;
     private double longtitude;
+    private String date;
+    private String nic;
+
+    public String getNic() {
+        return nic;
+    }
+
+    public void setNic(String nic) {
+        this.nic = nic;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
 
     public String getTitle() {
         return title_name;

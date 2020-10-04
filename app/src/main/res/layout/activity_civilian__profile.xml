@@ -9,25 +9,18 @@
     tools:context=".Civilian_Profile">
 
     <include android:id="@+id/toolBar" layout="@layout/tool_bar"></include>
+
     <LinearLayout
         android:id="@+id/linearLayout4"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_width="416dp"
+        android:layout_height="103dp"
+        android:layout_marginTop="55dp"
         android:gravity="center"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:context=".Civilian_Profile"
-        android:layout_marginTop="55dp">
-
-        <ImageView
-            android:id="@+id/imageView7"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|center_horizontal"
-            android:scaleType="centerCrop"
-            tools:srcCompat="@tools:sample/avatars" />
+        tools:context=".Civilian_Profile">
 
         <TextView
             android:id="@+id/textView7"
@@ -35,15 +28,16 @@
             android:layout_height="67dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Leela Kamal"
+            android:text="Profile Details"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="24sp"
             android:textStyle="bold" />
     </LinearLayout>
 
+
     <LinearLayout
-        android:id="@+id/linearLayout6"
+        android:id="@+id/linearLayout10"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal"
@@ -54,8 +48,39 @@
 
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/textView12"
             android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Name"
+            android:textColor="#000000"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/getcivilname"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="9919106485V" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout10">
+
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
@@ -64,13 +89,12 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/getcivilnic"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
             android:layout_weight="1"
-            android:gravity="center"
-            android:text="9919106485V"
-            android:layout_marginRight="10dp"/>
+            android:gravity="center" />
     </LinearLayout>
 
     <LinearLayout
@@ -87,7 +111,7 @@
 
         <TextView
             android:id="@+id/textView4"
-            android:layout_width="100dp"
+            android:layout_width="160dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
@@ -95,14 +119,13 @@
             android:textColor="#000000"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textView3"
+        <EditText
+            android:id="@+id/getcivilphone"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginRight="10dp"
             android:layout_weight="1"
-            android:gravity="center"
-            android:text="07xxxxxxx" />
+            android:gravity="center" />
     </LinearLayout>
 
     <LinearLayout
@@ -127,8 +150,8 @@
             android:textColor="#000000"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textView10"
+        <EditText
+            android:id="@+id/getcivilmail"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginRight="10dp"
@@ -150,7 +173,7 @@
 
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/deletecivil"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
@@ -185,7 +208,7 @@
             android:textSize="18dp"/>
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/getcivilpwd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -198,7 +221,7 @@
             android:layout_marginRight="20dp"/>
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/getcivilnewpwd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"

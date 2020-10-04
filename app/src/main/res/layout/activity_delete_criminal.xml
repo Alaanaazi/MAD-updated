@@ -7,14 +7,14 @@
     tools:context=".DeleteCriminal">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
-        android:layout_height="480dp"
+        android:layout_width="409dp"
+        android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="37dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="2dp"
         android:background="@color/cardview_light_background"
         android:backgroundTint="@color/cardview_dark_background">
 
@@ -30,7 +30,7 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/getcivilphone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -59,7 +59,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="320dp"
             android:background="@color/colorAccent"
-            android:text="TrackedLocation"
+            android:text="Save Changes"
             android:textColor="@color/cardview_light_background"
             android:textSize="16sp" />
 
@@ -87,9 +87,9 @@
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:srcCompat="@tools:sample/avatars"
             android:layout_marginLeft="100dp"
-            android:layout_marginTop="30dp"/>
+            android:layout_marginTop="30dp"
+            tools:srcCompat="@tools:sample/avatars" />
     </androidx.cardview.widget.CardView>
 
 </RelativeLayout>

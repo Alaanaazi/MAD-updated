@@ -10,13 +10,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
 public class CivilianDashboardActivity extends AppCompatActivity {
 
-    SharedPreferences sharedpreferences;
-    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +28,7 @@ public class CivilianDashboardActivity extends AppCompatActivity {
         });
 
 
-        CardView profile= (CardView) findViewById(R.id.ProfileCardView);
+        CardView profile= (CardView) findViewById(R.id.CivilProfileCardView);
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -73,12 +68,13 @@ public class CivilianDashboardActivity extends AppCompatActivity {
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                sharedpreferences = getSharedPreferences(CivilianLogin.SESSION_KEY, Context.MODE_PRIVATE);
-                Toast.makeText(getApplicationContext(),CivilianLogin.SESSION_KEY,Toast.LENGTH_SHORT).show();
-                editor = sharedpreferences.edit();
-                editor.clear();
-                editor.commit();
-
+             SessionManagement sessionManagement=new SessionManagement(CivilianDashboardActivity.this);
+             //Toast.makeText(getApplicationContext(),sessionManagement.getSession(),Toast.LENGTH_SHORT).show();
+             sessionManagement.removeSession();
+             //Toast.makeText(getApplicationContext(),sessionManagement.getSession(),Toast.LENGTH_SHORT).show();
+              onDestroy();
+             Intent intent=new Intent(getApplicationContext(),CivilianLogin.class);
+             startActivity(intent);
             }
         });
 

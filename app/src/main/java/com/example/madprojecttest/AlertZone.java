@@ -77,6 +77,7 @@ public class AlertZone extends FragmentActivity implements OnMapReadyCallback {
                                 if(spot.hasChildren()){
                                     alert=new Alert();
                                     alert.setTitle(spot.child("title").getValue().toString());
+                                    alert.setDate(spot.child("date").getValue().toString());
                                     alert.setLattitude(Double.parseDouble(spot.child("lattitude").getValue().toString()));
                                     alert.setLongtitude(Double.parseDouble(spot.child("longtitude").getValue().toString()));
                                    // Toast.makeText(getApplicationContext(),String.valueOf(alert.getLattitude()),Toast.LENGTH_SHORT).show();
@@ -102,7 +103,7 @@ public class AlertZone extends FragmentActivity implements OnMapReadyCallback {
                     List<Address> address = geocoder.getFromLocation(latitude,longtitude,1);
                     String str=address.get(0).getAddressLine(0)+",";
                         str+=address.get(0).getSubLocality()+",";
-                    mMap.addMarker(new MarkerOptions().position(latLng).title("your location").snippet(str).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
+                    mMap.addMarker(new MarkerOptions().position(latLng).title("Your location").snippet(str).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
                     mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng,10.5f));
 
                     //int i=0;
@@ -135,7 +136,7 @@ public class AlertZone extends FragmentActivity implements OnMapReadyCallback {
                         mMap.moveCamera(CameraUpdateFactory.newLatLng(my));
                         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(my,10.5f));
                     */
-
+                         return;
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
