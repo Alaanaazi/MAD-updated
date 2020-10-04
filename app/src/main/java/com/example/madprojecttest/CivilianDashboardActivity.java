@@ -19,7 +19,7 @@ public class CivilianDashboardActivity extends AppCompatActivity {
         news.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getApplicationContext(), Civilian_News.class);
+                Intent intent=new Intent(getApplicationContext(), View_Alerts.class);
                 startActivity(intent);
             }
         });
