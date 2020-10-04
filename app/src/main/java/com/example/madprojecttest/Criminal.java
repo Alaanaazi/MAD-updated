@@ -76,4 +76,13 @@ public class Criminal {
             return false;
         }
     }
+
+    public boolean AgeisValid(int age){
+        if (age>=18 && age<=70){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }

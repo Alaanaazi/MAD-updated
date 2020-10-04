@@ -34,11 +34,6 @@ public class ExampleUnitTest {
         assertEquals(true,value);
     }
 
-    @Test
-    public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
-    }
-
     //IT19125794
     @Test
     public void NoisCorrect() {
@@ -64,6 +59,12 @@ public class ExampleUnitTest {
     @Test
     public void AreaisCorrect(){
         boolean value = criminal.ArealengthisValid("Wellawatte East");
+        assertEquals(true,value);
+    }
+
+    @Test
+    public void AgeisCorrect(){
+        boolean value = criminal.AgeisValid(20);
         assertEquals(true,value);
     }
 }
