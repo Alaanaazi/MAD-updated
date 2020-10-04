@@ -52,38 +52,44 @@ public class CivilianRegister extends AppCompatActivity {
         btnregister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(txtpwd.getText().toString().trim().equals(txtconpwd.getText().toString().trim())){
+                if(civilian.isNICValid(txtnic.getText().toString().trim())) {
+                    if(txtpwd.getText().toString().trim().equals(txtconpwd.getText().toString().trim())){
 
-                    dbRef= FirebaseDatabase.getInstance().getReference().child("Civilian");
+                        dbRef= FirebaseDatabase.getInstance().getReference().child("Civilian");
 
-                    civilian.setName(txtname.getText().toString().trim());
-                    civilian.setNIC(txtnic.getText().toString().trim());
-                    civilian.setEmail(txtemail.getText().toString().trim());
-                    civilian.setPhone(Integer.parseInt(txtphone.getText().toString().trim()));
-                    civilian.setPwd(txtpwd.getText().toString().trim());
+                        civilian.setName(txtname.getText().toString().trim());
+                        civilian.setNIC(txtnic.getText().toString().trim());
+                        civilian.setEmail(txtemail.getText().toString().trim());
+                        civilian.setPhone(Integer.parseInt(txtphone.getText().toString().trim()));
+                        civilian.setPwd(txtpwd.getText().toString().trim());
 
-                    dbRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            if(snapshot.hasChild(civilian.getNIC())){
-                                Toast.makeText(getApplicationContext(),"NIC already exists",Toast.LENGTH_SHORT).show();
-                            }else{
-                                dbRef.child(civilian.getNIC()).setValue(civilian);
-                                Toast.makeText(getApplicationContext(),"Successfully registered",Toast.LENGTH_SHORT).show();
+                        dbRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                if(snapshot.hasChild(civilian.getNIC())){
+                                    Toast.makeText(getApplicationContext(),"NIC already exists",Toast.LENGTH_SHORT).show();
+                                }else{
+                                    dbRef.child(civilian.getNIC()).setValue(civilian);
+                                    Toast.makeText(getApplicationContext(),"Successfully registered",Toast.LENGTH_SHORT).show();
+                                }
                             }
-                        }
 
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
 
-                        }
-                    });
-
+                            }
+                        });
 
 
-                }else{
-                    Toast.makeText(getApplicationContext(),"Confirm Password doesn't match",Toast.LENGTH_SHORT).show();
+
+                    }else{
+                        Toast.makeText(getApplicationContext(),"Confirm Password doesn't match",Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(getApplicationContext(), "Enter a valid NIC format", Toast.LENGTH_SHORT).show();
                 }
+
+
             }
         });
 

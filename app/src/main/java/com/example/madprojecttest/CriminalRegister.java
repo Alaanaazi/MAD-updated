@@ -70,18 +70,22 @@ public class CriminalRegister extends AppCompatActivity {
         btnaddcriminal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(criminal.ArealengthisValid(txtarea.getText().toString().trim())) {
+                    dbref=FirebaseDatabase.getInstance().getReference().child("Criminal");
 
-              dbref=FirebaseDatabase.getInstance().getReference().child("Criminal");
+                    criminal.setName(txtid.getText().toString().trim());
+                    criminal.setAge(Integer.parseInt(txtage.getText().toString().trim()));
+                    criminal.setHeight(Integer.parseInt(txtheight.getText().toString().trim()));
+                    criminal.setArea(txtarea.getText().toString().trim());
+                    criminal.setCrime(txtcrime.getText().toString().trim());
+                    criminal.setPic(path);
 
-              criminal.setName(txtid.getText().toString().trim());
-              criminal.setAge(Integer.parseInt(txtage.getText().toString().trim()));
-              criminal.setHeight(Integer.parseInt(txtheight.getText().toString().trim()));
-              criminal.setArea(txtarea.getText().toString().trim());
-              criminal.setCrime(txtcrime.getText().toString().trim());
-              criminal.setPic(path);
+                    dbref.child(criminal.getName()).setValue(criminal);
+                    Toast.makeText(getApplicationContext(),"Successfully added",Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getApplicationContext(),"Area limit has exceeded the maximum limit",Toast.LENGTH_SHORT).show();
+                }
 
-              dbref.child(criminal.getName()).setValue(criminal);
-              Toast.makeText(getApplicationContext(),"Successfully added",Toast.LENGTH_SHORT).show();
 
             }
         });

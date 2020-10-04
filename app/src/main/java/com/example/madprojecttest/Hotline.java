@@ -25,7 +25,7 @@ public class Hotline {
     public boolean isNovalid(Integer no){
         String value = ""+no;
 
-        if(value.length()==9) {
+        if(value.length()<=9) {
             return true;
         } else {
             return false;

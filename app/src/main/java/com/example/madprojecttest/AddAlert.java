@@ -122,16 +122,23 @@ public class AddAlert extends AppCompatActivity {
                             lat=locationResult.getLocations().get(latestLocationIndex).getLatitude();
                             lng=locationResult.getLocations().get(latestLocationIndex).getLongitude();
                            // Toast.makeText(getApplicationContext(), String.valueOf(lat), Toast.LENGTH_SHORT).show();
-                            dbRef= FirebaseDatabase.getInstance().getReference().child("Alert");
-                            alert.setTitle(txttitle.getText().toString().trim());
-                            alert.setDescription(txtdesc.getText().toString().trim());
-                            alert.setDate(datetime);
-                            alert.setLattitude(lat);
-                            alert.setLongtitude(lng);
-                            alert.setNic(user);
 
-                            dbRef.child(alert.getTitle()).setValue(alert);
-                            Toast.makeText(getApplicationContext(), "Successfully sent", Toast.LENGTH_SHORT).show();
+                            if(alert.TitleLengthvalid(txttitle.getText().toString().trim())) {
+                                dbRef= FirebaseDatabase.getInstance().getReference().child("Alert");
+                                alert.setTitle(txttitle.getText().toString().trim());
+                                alert.setDescription(txtdesc.getText().toString().trim());
+                                alert.setDate(datetime);
+                                alert.setLattitude(lat);
+                                alert.setLongtitude(lng);
+                                alert.setNic(user);
+
+                                dbRef.child(alert.getTitle()).setValue(alert);
+                                Toast.makeText(getApplicationContext(), "Successfully sent", Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Title maximum length is 25", Toast.LENGTH_SHORT).show();
+                            }
+
+
 
 
 

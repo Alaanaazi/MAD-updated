@@ -40,35 +40,41 @@ public class PoliceRegister extends AppCompatActivity {
          btnregister.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
-                 if (txtpwd.getText().toString().trim().equals(txtconpwd.getText().toString().trim())) {
+                 if(policeStation.isIdValid(txtid.getText().toString().trim())) {
+                     if (txtpwd.getText().toString().trim().equals(txtconpwd.getText().toString().trim())) {
 
-                     dbRef= FirebaseDatabase.getInstance().getReference().child("PoliceStation");
+                         dbRef= FirebaseDatabase.getInstance().getReference().child("PoliceStation");
 
-                     policeStation.setId(txtid.getText().toString().trim());
-                     policeStation.setAddress(txtaddress.getText().toString().trim());
-                     policeStation.setPhone(Integer.parseInt(txtphone.getText().toString().trim()));
-                     policeStation.setPwd(txtpwd.getText().toString().trim());
+                         policeStation.setId(txtid.getText().toString().trim());
+                         policeStation.setAddress(txtaddress.getText().toString().trim());
+                         policeStation.setPhone(Integer.parseInt(txtphone.getText().toString().trim()));
+                         policeStation.setPwd(txtpwd.getText().toString().trim());
 
-                     dbRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                         @Override
-                         public void onDataChange(@NonNull DataSnapshot snapshot) {
-                             if(snapshot.hasChild(policeStation.getId())) {
-                                 Toast.makeText(getApplicationContext(), "Station already exists", Toast.LENGTH_SHORT).show();
-                             }else{
-                                 dbRef.child(policeStation.getId()).setValue(policeStation);
-                                 Toast.makeText(getApplicationContext(),"Successfully registered",Toast.LENGTH_SHORT).show();
+                         dbRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                             @Override
+                             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                 if(snapshot.hasChild(policeStation.getId())) {
+                                     Toast.makeText(getApplicationContext(), "Station already exists", Toast.LENGTH_SHORT).show();
+                                 }else{
+                                     dbRef.child(policeStation.getId()).setValue(policeStation);
+                                     Toast.makeText(getApplicationContext(),"Successfully registered",Toast.LENGTH_SHORT).show();
+                                 }
                              }
-                         }
 
-                         @Override
-                         public void onCancelled(@NonNull DatabaseError error) {
+                             @Override
+                             public void onCancelled(@NonNull DatabaseError error) {
 
-                         }
-                     });
+                             }
+                         });
+                     } else {
+
+                         Toast.makeText(getApplicationContext(),"Confirm Password doesn't match",Toast.LENGTH_SHORT).show();
+                     }
                  } else {
-
-                     Toast.makeText(getApplicationContext(),"Confirm Password doesn't match",Toast.LENGTH_SHORT).show();
+                     Toast.makeText(getApplicationContext(),"ID is invalid",Toast.LENGTH_SHORT).show();
                  }
+
+
              }
          });
 

@@ -56,33 +56,39 @@ public class AddEmergency extends AppCompatActivity {
         btnsave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(hotline.isNovalid(Integer.parseInt(txtno.getText().toString().trim()))) {
+                    dbRef= FirebaseDatabase.getInstance().getReference().child("Hotline");
 
-                dbRef= FirebaseDatabase.getInstance().getReference().child("Hotline");
+                    hotline.setName(txtname.getText().toString().trim());
+                    hotline.setNo(Integer.parseInt(txtno.getText().toString().trim()));
 
-                hotline.setName(txtname.getText().toString().trim());
-                hotline.setNo(Integer.parseInt(txtno.getText().toString().trim()));
+                    dbRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            if(snapshot.hasChild(hotline.getName())){
+                                Toast.makeText(getApplicationContext(), "Hotline Already Exists", Toast.LENGTH_SHORT).show();
+                            }else{
 
-                dbRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        if(snapshot.hasChild(hotline.getName())){
-                            Toast.makeText(getApplicationContext(), "Hotline Already Exists", Toast.LENGTH_SHORT).show();
-                        }else{
+                                dbRef.child(hotline.getName()).setValue(hotline);
 
-                            dbRef.child(hotline.getName()).setValue(hotline);
+                                Toast.makeText(getApplicationContext(), "Successfully added", Toast.LENGTH_SHORT).show();
+                                Intent intent=new Intent(getApplicationContext(),Emergency.class);
+                                startActivity(intent);
 
-                            Toast.makeText(getApplicationContext(), "Successfully added", Toast.LENGTH_SHORT).show();
-                            Intent intent=new Intent(getApplicationContext(),Emergency.class);
-                            startActivity(intent);
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
 
                         }
-                    }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
+                    });
 
-                    }
-                });
+                } else {
+                    Toast.makeText(getApplicationContext(), "Hotline number should contain 10 digits", Toast.LENGTH_SHORT).show();
+                }
+
 
 
 
