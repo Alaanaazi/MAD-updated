@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PoliceRegister"
-    android:background="@drawable/b2">
+    android:background="@drawable/b1"
+    tools:context=".PoliceRegister">
+
     <TextView
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="50dp"
         android:text="Create Account"
         android:textColor="@android:color/white"
         android:textSize="25dp"

@@ -8,6 +8,7 @@ import android.animation.ArgbEvaluator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,6 +37,16 @@ public class Police_Criminal_View extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.police__criminal__view);
 
+        Button btn=findViewById(R.id.addnewcriminal);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),CriminalRegister.class);
+                startActivity(intent);
+            }
+        });
+
+
         title = findViewById(R.id.ToolbarTitle);
         title.setText("Wanted List");
 
@@ -59,10 +70,14 @@ public class Police_Criminal_View extends AppCompatActivity {
                     if(wanted.hasChildren()){
 
                         criminal=new Criminal();
+                        criminal.setName(wanted.child("name").getValue().toString());
                         criminal.setCrime(wanted.child("crime").getValue().toString());
+                        criminal.setHeight(Integer.parseInt(wanted.child("height").getValue().toString()));
+                        criminal.setAge(Integer.parseInt(wanted.child("age").getValue().toString()));
                         criminal.setArea(wanted.child("area").getValue().toString());
                         criminal.setPic(wanted.child("pic").getValue().toString());
                         criminals.add(criminal);
+
                     }else {
                         Toast.makeText(getApplicationContext(), "Nothing to display", Toast.LENGTH_SHORT).show();
                     }

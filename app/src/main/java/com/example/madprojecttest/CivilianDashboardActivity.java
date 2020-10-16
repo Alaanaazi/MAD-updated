@@ -3,16 +3,13 @@ package com.example.madprojecttest;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 public class CivilianDashboardActivity extends AppCompatActivity {
 
-//hi
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,7 +19,7 @@ public class CivilianDashboardActivity extends AppCompatActivity {
         news.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getApplicationContext(),View_Alerts.class);
+                Intent intent=new Intent(getApplicationContext(), View_Alerts.class);
                 startActivity(intent);
             }
         });
@@ -50,7 +47,7 @@ public class CivilianDashboardActivity extends AppCompatActivity {
         wantedlist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getApplicationContext(),Criminal_View.class);
+                Intent intent=new Intent(getApplicationContext(), Criminal_List.class);
                 startActivity(intent);
             }
         });

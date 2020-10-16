@@ -25,7 +25,18 @@ public class SessionManagement {
 
     }
 
+    public void savePoliceSession(PoliceStation policeStation){
+
+        String un=policeStation.getId();
+        editor.putString(SESSION_KEY,un).commit();
+    }
+
     public String getSession(){
+
+        return sharedPreferences.getString(SESSION_KEY,"No user");
+    }
+
+    public String getPoliceSession(){
 
         return sharedPreferences.getString(SESSION_KEY,"No user");
     }
