@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -23,7 +24,7 @@ public class Civilian_Profile extends AppCompatActivity {
     EditText name,mail,phone,pwd;
     TextView nic;
     Button dltbtn,respwd;
-    DatabaseReference dbRef;
+    DatabaseReference dbRef,delRef,upRef;
 
 
 
@@ -50,8 +51,8 @@ public class Civilian_Profile extends AppCompatActivity {
         name=findViewById(R.id.getcivilname);
         mail=findViewById(R.id.getcivilmail);
         phone=findViewById(R.id.getcivilphone);
-        pwd=findViewById(R.id.getcivilnewpwd);
         nic=findViewById(R.id.getcivilnic);
+        respwd = findViewById(R.id.Resetbtn);
 
         dltbtn=findViewById(R.id.deletecivil);
 
@@ -73,13 +74,31 @@ public class Civilian_Profile extends AppCompatActivity {
         });
 
 
+        respwd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                upRef= FirebaseDatabase.getInstance().getReference().child("Civilian").child(nic.getText().toString());
+                upRef.child("name").setValue(name.getText().toString().trim());
+                upRef.child("email").setValue(mail.getText().toString().trim());
+                upRef.child("phone").setValue(phone.getText().toString().trim());
+
+                Toast.makeText(getApplicationContext(), "Successfully updated", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
         dltbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-
+                delRef=FirebaseDatabase.getInstance().getReference().child("Civilian").child(nic.getText().toString());
                 dbRef.removeValue();
                 sessionManagement.removeSession();
+
+                Toast.makeText(getApplicationContext(), "Successfully deleted", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(getApplicationContext(),WelcomePage.class);
+                startActivity(intent);
 
             }
         });

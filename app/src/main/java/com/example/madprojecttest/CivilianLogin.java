@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -58,6 +59,14 @@ public class CivilianLogin extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                if(TextUtils.isEmpty(uname.getText().toString())){
+                    Toast.makeText(getApplicationContext(),"Username cannot be empty",Toast.LENGTH_SHORT).show();
+                } else if(TextUtils.isEmpty(pwd.getText().toString())){
+                    Toast.makeText(getApplicationContext(),"Password cannot be empty",Toast.LENGTH_SHORT).show();
+                } else {
+
+
+
                 final String un=uname.getText().toString().trim();
                 final String pw=pwd.getText().toString().trim();
                 civilian.setNIC(uname.getText().toString().trim());
@@ -96,6 +105,8 @@ public class CivilianLogin extends AppCompatActivity {
 
                     }
                 });
+
+                }
 
             }
         });
