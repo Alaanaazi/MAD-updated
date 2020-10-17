@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Looper;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -122,7 +123,15 @@ public class AddAlert extends AppCompatActivity {
                             lat=locationResult.getLocations().get(latestLocationIndex).getLatitude();
                             lng=locationResult.getLocations().get(latestLocationIndex).getLongitude();
                            // Toast.makeText(getApplicationContext(), String.valueOf(lat), Toast.LENGTH_SHORT).show();
+                            if(TextUtils.isEmpty(txttitle.getText().toString())){
+                                Toast.makeText(getApplicationContext(),"Title cannot be empty",Toast.LENGTH_SHORT).show();
+                            }
+                            else if(TextUtils.isEmpty(txtdesc.getText().toString())){
+                                Toast.makeText(getApplicationContext(),"description cannot be empty",Toast.LENGTH_SHORT).show();
+                            }
 
+
+                            else{
                             if(alert.TitleLengthvalid(txttitle.getText().toString().trim())) {
                                 dbRef= FirebaseDatabase.getInstance().getReference().child("Alert");
                                 alert.setTitle(txttitle.getText().toString().trim());
@@ -134,11 +143,13 @@ public class AddAlert extends AppCompatActivity {
 
                                 dbRef.child(alert.getTitle()).setValue(alert);
                                 Toast.makeText(getApplicationContext(), "Successfully sent", Toast.LENGTH_SHORT).show();
+                                Intent intent=new Intent(getApplicationContext(),View_Alerts.class);
+                                startActivity(intent);
                             } else {
                                 Toast.makeText(getApplicationContext(), "Title maximum length is 25", Toast.LENGTH_SHORT).show();
                             }
 
-
+                            }
 
 
 
