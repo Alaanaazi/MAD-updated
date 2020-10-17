@@ -111,6 +111,7 @@ public class Emergency extends AppCompatActivity {
         listener_contacts = new EmergencyAdapter.RecyclerViewClickListener() {
             @Override
             public void onClick(View v, int position) {
+
                 Intent intent1 = new Intent(getApplicationContext(), EmergencyEditPage.class);
                 intent1.putExtra("name", emergencyList.get(position).getName());
                 intent1.putExtra("no", emergencyList.get(position).getNo());

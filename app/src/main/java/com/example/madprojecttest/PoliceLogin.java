@@ -74,6 +74,8 @@ public class PoliceLogin extends AppCompatActivity {
                             sessionManagement.savePoliceSession(policeStation);
                             Intent intent = new Intent(getApplicationContext(), PoliceDashboard.class);
                             startActivity(intent);
+                        }else{
+                            Toast.makeText(getApplicationContext(),"Invalid ID or Password",Toast.LENGTH_SHORT).show();
                         }
                     }
                     @Override

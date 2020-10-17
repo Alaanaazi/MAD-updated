@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
@@ -38,8 +39,10 @@ public class Adapter2 extends PagerAdapter {
 
     @NonNull
     @Override
-    public Object instantiateItem(@NonNull ViewGroup container, int position) {
+    public Object instantiateItem(@NonNull final ViewGroup container,final int position) {
+
         layoutInflater = LayoutInflater.from(context);
+
         View view=layoutInflater.inflate(R.layout.criminal, container,false);
 
 
@@ -57,16 +60,20 @@ public class Adapter2 extends PagerAdapter {
         desc.setText("Age : " + String.valueOf(criminals.get(position).getAge()) + "\n" + "Height : " +String.valueOf(criminals.get(position).getHeight()) + "cm" +
                 "\n" + "Crime : " +criminals.get(position).getCrime() +
                 "\n" + "Area : " +criminals.get(position).getArea());
-        name = criminals.get(position).getName();
+
+
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context.getApplicationContext(),ViewCriminal.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.putExtra("Name",name);
+                intent.putExtra("id",String.valueOf(criminals.get(position).getId()));
                 context.startActivity(intent);
+
             }
         });
+
+
 
         container.addView(view,0);
         return view;

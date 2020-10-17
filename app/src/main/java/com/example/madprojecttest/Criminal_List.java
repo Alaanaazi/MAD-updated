@@ -60,6 +60,7 @@ public class Criminal_List extends AppCompatActivity {
                     if(wanted.hasChildren()){
 
                         criminal=new Criminal();
+
                         criminal.setName(wanted.child("name").getValue().toString());
                         criminal.setCrime(wanted.child("crime").getValue().toString());
                         criminal.setHeight(Integer.parseInt(wanted.child("height").getValue().toString()));
