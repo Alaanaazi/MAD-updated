@@ -3,7 +3,9 @@ package com.example.madprojecttest;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -40,6 +42,21 @@ public class PoliceRegister extends AppCompatActivity {
          btnregister.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
+
+                 if(TextUtils.isEmpty(txtid.getText().toString())){
+                     Toast.makeText(getApplicationContext(),"ID cannot be empty",Toast.LENGTH_SHORT).show();
+                 } else if(TextUtils.isEmpty(txtaddress.getText().toString())){
+                     Toast.makeText(getApplicationContext(),"Address cannot be empty",Toast.LENGTH_SHORT).show();
+                 } else if(TextUtils.isEmpty(txtphone.getText().toString())){
+                     Toast.makeText(getApplicationContext(),"Phone no cannot be empty",Toast.LENGTH_SHORT).show();
+                 } else if(TextUtils.isEmpty(txtpwd.getText().toString())){
+                     Toast.makeText(getApplicationContext(),"Password cannot be empty",Toast.LENGTH_SHORT).show();
+                 } else if(TextUtils.isEmpty(txtconpwd.getText().toString())){
+                     Toast.makeText(getApplicationContext(),"Password cannot be empty",Toast.LENGTH_SHORT).show();
+                 } else {
+
+
+
                  if(policeStation.isIdValid(txtid.getText().toString().trim())) {
                      if (txtpwd.getText().toString().trim().equals(txtconpwd.getText().toString().trim())) {
 
@@ -58,6 +75,8 @@ public class PoliceRegister extends AppCompatActivity {
                                  }else{
                                      dbRef.child(policeStation.getId()).setValue(policeStation);
                                      Toast.makeText(getApplicationContext(),"Successfully registered",Toast.LENGTH_SHORT).show();
+                                     Intent intent = new Intent(getApplicationContext(),PoliceLogin.class);
+                                     startActivity(intent);
                                  }
                              }
 
@@ -74,7 +93,7 @@ public class PoliceRegister extends AppCompatActivity {
                      Toast.makeText(getApplicationContext(),"ID is invalid",Toast.LENGTH_SHORT).show();
                  }
 
-
+                 }
              }
          });
 

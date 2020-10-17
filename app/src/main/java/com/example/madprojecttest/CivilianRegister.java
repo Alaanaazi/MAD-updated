@@ -4,7 +4,9 @@ import androidx.annotation.IntegerRes;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -52,6 +54,22 @@ public class CivilianRegister extends AppCompatActivity {
         btnregister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(TextUtils.isEmpty(txtname.getText().toString())){
+                    Toast.makeText(getApplicationContext(),"Name cannot be empty",Toast.LENGTH_SHORT).show();
+                } else if(TextUtils.isEmpty(txtnic.getText().toString())){
+                    Toast.makeText(getApplicationContext(),"NIC cannot be empty",Toast.LENGTH_SHORT).show();
+                } else if(TextUtils.isEmpty(txtemail.getText().toString())){
+                    Toast.makeText(getApplicationContext(),"Email cannot be empty",Toast.LENGTH_SHORT).show();
+                } else if(TextUtils.isEmpty(txtphone.getText().toString())){
+                    Toast.makeText(getApplicationContext(),"Phone no cannot be empty",Toast.LENGTH_SHORT).show();
+                } else if(TextUtils.isEmpty(txtpwd.getText().toString())){
+                    Toast.makeText(getApplicationContext(),"Password cannot be empty",Toast.LENGTH_SHORT).show();
+                } else if(TextUtils.isEmpty(txtconpwd.getText().toString())){
+                    Toast.makeText(getApplicationContext(),"Password cannot be empty",Toast.LENGTH_SHORT).show();
+                } else {
+
+
+
                 if(civilian.isNICValid(txtnic.getText().toString().trim())) {
                     if(txtpwd.getText().toString().trim().equals(txtconpwd.getText().toString().trim())){
 
@@ -71,6 +89,8 @@ public class CivilianRegister extends AppCompatActivity {
                                 }else{
                                     dbRef.child(civilian.getNIC()).setValue(civilian);
                                     Toast.makeText(getApplicationContext(),"Successfully registered",Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(getApplicationContext(),CivilianLogin.class);
+                                    startActivity(intent);
                                 }
                             }
 
@@ -88,7 +108,7 @@ public class CivilianRegister extends AppCompatActivity {
                 } else {
                     Toast.makeText(getApplicationContext(), "Enter a valid NIC format", Toast.LENGTH_SHORT).show();
                 }
-
+                }
 
             }
         });

@@ -47,7 +47,7 @@ public class View_Alerts extends AppCompatActivity {
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),PoliceDashboard.class);
+                Intent intent = new Intent(getApplicationContext(),CivilianDashboardActivity.class);
                 startActivity(intent);
             }
         });
@@ -78,7 +78,7 @@ public class View_Alerts extends AppCompatActivity {
 
                         setOnClickListner();
                     } else {
-                        Toast.makeText(getApplicationContext(), "Nothing to display", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(), "Nothing to display", Toast.LENGTH_SHORT).show();
                     }
                 }
 
