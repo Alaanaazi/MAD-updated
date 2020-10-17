@@ -1,13 +1,11 @@
 package com.example.madprojecttest;
 
-import android.widget.ImageView;
-
 public class Criminal {
 
-    private String  id;
+    private Integer id;
     private String name;
-    private String  area;
-    private String  crime;
+    private String area;
+    private String crime;
     private Integer height;
     private Integer age;
     private String pic;
@@ -18,14 +16,6 @@ public class Criminal {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getArea() {
@@ -68,21 +58,36 @@ public class Criminal {
         this.pic = pic;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public boolean ArealengthisValid(String area) {
-        if (area.length()<=20){
+        if (area.length() <= 20) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
 
-    public boolean AgeisValid(int age){
-        if (age>=18 && age<=70){
+    public boolean AgeisValid(int age) {
+        if (age >= 18 && age <= 70) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
+
+        public boolean HeightisValid ( int ht){
+            if (ht >= 145 && ht <= 195) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
 }

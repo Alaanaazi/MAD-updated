@@ -70,6 +70,7 @@ public class Police_Criminal_View extends AppCompatActivity {
                     if(wanted.hasChildren()){
 
                         criminal=new Criminal();
+                        criminal.setId(Integer.parseInt(wanted.child("id").getValue().toString()));
                         criminal.setName(wanted.child("name").getValue().toString());
                         criminal.setCrime(wanted.child("crime").getValue().toString());
                         criminal.setHeight(Integer.parseInt(wanted.child("height").getValue().toString()));

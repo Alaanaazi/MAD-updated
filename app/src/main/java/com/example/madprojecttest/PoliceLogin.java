@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -58,6 +59,8 @@ public class PoliceLogin extends AppCompatActivity {
                             sessionManagement.savePoliceSession(policeStation);
                             Intent intent = new Intent(getApplicationContext(), PoliceDashboard.class);
                             startActivity(intent);
+                        }else{
+                            Toast.makeText(getApplicationContext(),"Invalid ID or Password",Toast.LENGTH_SHORT).show();
                         }
                     }
                     @Override
