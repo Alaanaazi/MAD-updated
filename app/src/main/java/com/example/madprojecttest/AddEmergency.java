@@ -86,7 +86,7 @@ public class AddEmergency extends AppCompatActivity {
                     });
 
                 } else {
-                    Toast.makeText(getApplicationContext(), "Hotline number should contain 10 digits", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Hotline number should contain maximum 9 digits", Toast.LENGTH_SHORT).show();
                 }
 
 
